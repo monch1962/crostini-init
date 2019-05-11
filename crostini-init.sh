@@ -111,6 +111,28 @@ get_docker() {
 	sudo usermod -aG docker ${me}
 }
 
+get_node() {
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+	#command -v nvm
+	export NVM_DIR="$HOME/.config"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+	nvm install node
+	npm install -g serverless
+}
+
+get_awscli() {
+	sudo apt-get install awscli -y
+}
+
+get_gcloud() {
+	export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+	echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+	curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+	sudo apt-get update
+	sudo apt-get install google-cloud-sdk -y
+	sudo apt-get install kubectl -y
+}
 
 sudo apt-get update
 sudo apt-get upgrade -y
@@ -134,3 +156,6 @@ go get golang.org/x/lint/golint
 go get github.com/derekparker/delve/cmd/dlv
 get_docker
 get_code
+get_node
+get_awscli
+get_gcloud
