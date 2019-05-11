@@ -57,6 +57,7 @@ get_go() {
 get_code() {
 	set -euf -o pipefail
 
+	sudo apt-get install gpgconf -y
 	sudo apt-get install gpg -y
 	curl -s https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 	sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
