@@ -1,5 +1,14 @@
 get_terminal_tools() {
-  sudo apt-get install mosh tmux -y
+ 	sudo apt-get install mosh tmux -y
+}
+
+get_powershell() {
+	sudo apt install curl gnupg apt-transport-https liblttng-ust-ctl2 liblttng-ust0 libunwind8 liburcu4 wget
+	curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+	sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" &gt; /etc/apt/sources.list.d/microsoft.list'
+	sudo apt-get update
+	sudo apt-get install -y powershell
+	sudo apt-get install -f
 }
  
 get_go() {
@@ -106,6 +115,8 @@ sudo apt-get upgrade -y
 sudo apt-get install wget curl bzip2 -y
 cd ~
 get_terminal_tools
+cd ~
+get_powershell
 cd ~
 get_go
 cd ~
