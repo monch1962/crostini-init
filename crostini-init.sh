@@ -85,7 +85,7 @@ get_code() {
 	code --install-extension anseki.vscode-color
 	code --install-extension shd101wyy.markdown-preview-enhanced
 	code --install-extension PKief.material-icon-theme
-	code --install-extension robertohuertasm.vscode-icons
+	#code --install-extension robertohuertasm.vscode-icons
 
 	code --list-extensions --show-versions	
 }
