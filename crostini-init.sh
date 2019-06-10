@@ -136,6 +136,12 @@ get_gcloud() {
 	sudo apt-get install kubectl -y
 }
 
+get_zsh() {
+	sudo apt-get install zsh -y
+	curl -Lo install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+	sh install.sh --unattended
+}
+
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install wget curl bzip2 -y
@@ -145,6 +151,8 @@ cd ~
 get_powershell
 cd ~
 get_go
+cd ~
+get_zsh
 cd ~
 go get github.com/nsf/gocode
 go get github.com/uudashr/gopkgs/cmd/gopkgs
