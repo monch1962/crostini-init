@@ -1,6 +1,6 @@
 
 get_terminal_tools() {
- 	sudo apt-get install mosh tmux -y
+ 	sudo apt-get install mosh tmux sshfs -y
 }
 
 get_powershell() {
@@ -86,6 +86,7 @@ get_code() {
 	code --install-extension shd101wyy.markdown-preview-enhanced
 	code --install-extension PKief.material-icon-theme
 	code --install-extension Shan.code-settings-sync
+	code --install-extension esbenp.prettier-vscode
 	#code --install-extension robertohuertasm.vscode-icons
 
 	code --list-extensions --show-versions	
