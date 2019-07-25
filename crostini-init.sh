@@ -87,6 +87,7 @@ get_code() {
 	code --install-extension PKief.material-icon-theme
 	code --install-extension Shan.code-settings-sync
 	code --install-extension esbenp.prettier-vscode
+	code --install-extension googlecloudtools.cloudcode
 	#code --install-extension robertohuertasm.vscode-icons
 
 	code --list-extensions --show-versions	
