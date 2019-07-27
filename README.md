@@ -4,6 +4,6 @@
 Get a useful set of development tools installed on top of pristine Crostini (Chromebook's Linux in a VM)
 
 ## To use
-Start a new Crostini instance
+Start a new Crostini instance, then run
 
 `curl -s https://raw.githubusercontent.com/monch1962/crostini-init/master/crostini-init.sh | bash -`
