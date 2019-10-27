@@ -144,6 +144,10 @@ get_zsh() {
 	sh install.sh --unattended
 }
 
+get_rust() {
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install wget curl bzip2 -y
@@ -155,6 +159,8 @@ cd ~
 get_go
 cd ~
 get_zsh
+cd ~
+get_rust
 cd ~
 go get github.com/nsf/gocode
 go get github.com/uudashr/gopkgs/cmd/gopkgs
