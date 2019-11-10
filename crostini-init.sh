@@ -17,7 +17,7 @@ get_go() {
 	# Download latest Golang release for AMD64
 	# https://dl.google.com/go/go1.10.linux-amd64.tar.gz
 
-	set -euf -o pipefail
+	# set -euf -o pipefail
 	# Install pre-reqs
 	sudo apt-get install python3 git -y
 	o=$(python3 -c $'import os\nprint(os.get_blocking(0))\nos.set_blocking(0, True)')
@@ -55,7 +55,7 @@ get_go() {
 }
 
 get_code() {
-	set -euf -o pipefail
+	# set -euf -o pipefail
 
 	sudo apt-get install gpgconf -y
 	sudo apt-get install gpg -y
