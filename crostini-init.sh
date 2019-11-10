@@ -148,6 +148,18 @@ get_rust() {
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
 
+get_skaffold() {
+	curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
+	chmod +x skaffold
+	sudo mv skaffold /usr/local/bin	
+	# Now get kubectl
+	sudo apt-get update && sudo apt-get install -y apt-transport-https
+	curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+	echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+	sudo apt-get update
+	sudo apt-get install -y kubectl
+}
+
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install wget curl bzip2 -y
@@ -177,3 +189,4 @@ get_code
 get_node
 get_awscli
 get_gcloud
+get_skaffold
