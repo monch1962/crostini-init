@@ -165,6 +165,10 @@ get_skaffold() {
 	sudo install minikube-linux-amd64 /usr/local/bin/minikube
 }
 
+get_freeplane() {
+	sudo apt-get install -y freeplane
+}
+
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install wget curl bzip2 -y
@@ -195,3 +199,4 @@ get_node
 get_awscli
 get_gcloud
 get_skaffold
+get_freeplane
