@@ -3,6 +3,11 @@ get_terminal_tools() {
  	sudo apt-get install mosh tmux sshfs -y
 }
 
+get_python() {
+	# Install pyenv
+	curl https://pyenv.run | bash
+}
+
 get_powershell() {
 	sudo apt install curl gnupg apt-transport-https liblttng-ust-ctl2 liblttng-ust0 libunwind8 liburcu4 wget
 	curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
@@ -174,6 +179,8 @@ sudo apt-get upgrade -y
 sudo apt-get install wget curl bzip2 -y
 cd ~
 get_terminal_tools
+cd ~
+get_python
 cd ~
 get_powershell
 cd ~
