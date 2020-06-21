@@ -151,6 +151,7 @@ get_zsh() {
 
 get_rust() {
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	source $HOME/.cargo/env
 }
 
 get_skaffold() {
@@ -166,8 +167,8 @@ get_skaffold() {
 	sudo apt-get install -y kubectl
 	
 	# Now get minikube
-	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-	sudo install minikube-linux-amd64 /usr/local/bin/minikube
+	# curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+	# sudo install minikube-linux-amd64 /usr/local/bin/minikube
 }
 
 get_freeplane() {
