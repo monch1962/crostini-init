@@ -207,4 +207,4 @@ get_node
 get_awscli
 get_gcloud
 get_skaffold
-get_freeplane
+#get_freeplane
